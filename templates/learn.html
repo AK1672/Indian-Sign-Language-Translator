@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Sign Language</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <style>
+     /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #FFA500; /* Light orange background */
+  color: #333; /* Text color */
+}
+
+/* Header Styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar .navbar-brand {
+        color: #ffcc00; /* Highlight color for the brand */
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+.navbar .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #ffcc00;
+}
+
+/* Main Section */
+main {
+  padding: 20px;
+}
+
+main h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Card Layout */
+.card {
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Grid Layout for Cards */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.col {
+  flex: 1 1 18rem; /* Flexbox to make sure the cards are responsive */
+  margin: 10px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col {
+    flex: 1 1 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-text {
+    font-size: 0.875rem;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container text-center">
+        <h1>Indian Sign Language Translator</h1>
+
+        <nav class="navbar  navbar-expand bg-dark border-bottom border-body" data-bs-theme="dark" >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">HandSpeak</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/learn">Learn</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/predict">Predict</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <section>
+          <h2>Learn Hand Signs</h2>
+          <div class="container text-center">
+            <!-- Each image and label can be dynamically populated -->
+            <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/0.jpg"
+                    class="card-img-top"
+                    alt="Sign 0"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">0</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/1.jpg"
+                    class="card-img-top"
+                    alt="Sign 1"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">1</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/2.jpg"
+                    class="card-img-top"
+                    alt="Sign 2"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">2</p>
+                  </div>
+                </div>
+              </div></div><div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/3.jpg"
+                    class="card-img-top"
+                    alt="Sign 3"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">3</p>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/4.jpg"
+                    class="card-img-top"
+                    alt="Sign 4"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">4</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/5.jpg"
+                    class="card-img-top"
+                    alt="Sign 5"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">5</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/6.jpg"
+                    class="card-img-top"
+                    alt="Sign 6"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">6</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/7.jpg"
+                    class="card-img-top"
+                    alt="Sign 7"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">7</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/8.jpg"
+                    class="card-img-top"
+                    alt="Sign 8"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">8</p>
+                  </div>
+                </div>
+              </div></div>
+              <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/9.jpg"
+                    class="card-img-top"
+                    alt="Sign 9A"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">9</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/A.jpg"
+                    class="card-img-top"
+                    alt="Sign A"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">A</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/B.jpg"
+                    class="card-img-top"
+                    alt="Sign B"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">B</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/C.jpg"
+                    class="card-img-top"
+                    alt="Sign C"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">C</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/D.jpg"
+                    class="card-img-top"
+                    alt="Sign D"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">D</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/E.jpg"
+                    class="card-img-top"
+                    alt="Sign E"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">E</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/F.jpg"
+                    class="card-img-top"
+                    alt="Sign f"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">F</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/G.jpg"
+                    class="card-img-top"
+                    alt="Sign G"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">G</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/H.jpg"
+                    class="card-img-top"
+                    alt="Sign H"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">H</p>
+                  </div>
+                </div>
+              </div></div>
+              <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/I.jpg"
+                    class="card-img-top"
+                    alt="Sign I"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">I</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/J.jpg"
+                    class="card-img-top"
+                    alt="Sign J"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">J</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/K.jpg"
+                    class="card-img-top"
+                    alt="Sign K"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">K</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/L.jpg"
+                    class="card-img-top"
+                    alt="Sign L"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">L</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/M.jpg"
+                    class="card-img-top"
+                    alt="Sign M"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">M</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/N.jpg"
+                    class="card-img-top"
+                    alt="Sign N"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">N</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/O.jpg"
+                    class="card-img-top"
+                    alt="Sign O"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">O</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/P.jpg"
+                    class="card-img-top"
+                    alt="Sign P"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">P</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/Q.jpg"
+                    class="card-img-top"
+                    alt="Sign Q"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">Q</p>
+                  </div>
+                </div>
+              </div></div>
+              <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/R.jpg"
+                    class="card-img-top"
+                    alt="Sign R"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">R</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/S.jpg"
+                    class="card-img-top"
+                    alt="Sign S"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">S</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/T.jpg"
+                    class="card-img-top"
+                    alt="Sign T"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">T</p>
+                  </div>
+                </div>
+              </div></div>
+              <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/U.jpg"
+                    class="card-img-top"
+                    alt="Sign U"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">U</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/V.jpg"
+                    class="card-img-top"
+                    alt="Sign V"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">V</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/W.jpg"
+                    class="card-img-top"
+                    alt="Sign W"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">W</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/X.jpg"
+                    class="card-img-top"
+                    alt="Sign X"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">X</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/Y.jpg"
+                    class="card-img-top"
+                    alt="Sign Y"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">Y</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/Z.jpg"
+                    class="card-img-top"
+                    alt="Sign Z"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">Z</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/hello.jpg"
+                    class="card-img-top"
+                    alt="Sign Hello"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">Hello</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/bye.jpg"
+                    class="card-img-top"
+                    alt="Sign Bye"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">Bye</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/thank.jpg"
+                    class="card-img-top"
+                    alt="Sign Thanks"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">Thank You</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/static/images/Sorry.jpg"
+                    class="card-img-top"
+                    alt="Sign Sorry"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">Sorry</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Repeat similar blocks for other signs -->
+          </div>
+        </section>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
